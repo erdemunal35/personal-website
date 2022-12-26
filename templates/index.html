@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hi! I'm Erdem</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }} ">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/unicons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+
+    <!-- MAIN STYLE -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tooplate-style.css') }}">
+    
+<!--
+
+Tooplate 2115 Marvel
+
+https://www.tooplate.com/view/2115-marvel
+
+-->
+  </head>
+  <body>
+
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i>Erdem</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link"><span data-hover="About">About</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#project" class="nav-link"><span data-hover="Projects">Projects</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#resume" class="nav-link"><span data-hover="Resume">Resume</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-lg-auto">
+                    <div class="ml-lg-4">
+                      <div class="color-mode d-lg-flex justify-content-center align-items-center">
+                        <i class="color-mode-icon"></i>
+                      </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ABOUT -->
+    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
+                    <div class="about-text">
+                        <small class="small-text">Welcome to <span class="mobile-block">my website!</span></small>
+                        <h1 class="animated animated-text">
+                            <span class="mr-2">I'm</span>
+                                <div class="animated-info">
+                                    <span class="animated-item">Erdem Ünal</span>
+                                    <span class="animated-item">Data Architect</span>
+                                    <!-- <span class="animated-item">ML-Ops Engineer</span> -->
+                                    <span class="animated-item">ML Engineer</span>
+                                </div>
+                        </h1>
+
+                        <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and web development.</p>
+                        
+                        <div class="custom-btn-group mt-4">
+                          <a href="#" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
+                          <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Get a free quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-12 col-12">
+                    <div class="about-image svg">
+                        <img src="{{ url_for('static', filename='images/erdem/Screenshot 2022-12-26 at 21.13.52.png') }}" class="img-fluid" alt="png image">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="project py-5" id="project">
+        <div class="container">
+                
+                <div class="row">
+                  <div class="col-lg-11 text-center mx-auto col-12">
+
+                      <div class="col-md-8 mx-auto">
+                        <h2>ML-Ops Engineering, Research in Deep Learning, Business Data Analytics, Scheduled Data Pipelining and many more</h2>
+                      </div>
+
+                      <div class="owl-carousel owl-theme">
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="{{ url_for('static', filename='images/project/proj3.png') }}" class="img-thumbnail" alt="project image">
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="{{ url_for('static', filename='images/project/proj4.png') }}" class="img-thumbnail" alt="project image">
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="{{ url_for('static', filename='images/project/proj1.png') }}" class="img-thumbnail" alt="project image">
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="{{ url_for('static', filename='images/project/proj2.png') }}" class="img-thumbnail" alt="project image">
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="{{ url_for('static', filename='images/project/proj5.png') }}" class="img-thumbnail" alt="project image">
+                          </div>
+                        </div>
+
+                        <div class="item">
+                          <div class="project-info">
+                            <img src="{{ url_for('static', filename='images/project/proj6.png') }}" class="img-fluid" alt="project image">
+                          </div>
+                        </div>
+                      </div>
+
+                  </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="resume">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12">
+                  <h2 class="mb-4">Experiences</h2>
+
+                    <div class="timeline">
+                        <div class="timeline-wrapper">
+                             <div class="timeline-yr">
+                                  <span>2022</span>
+                             </div>
+                             <div class="timeline-info">
+                                  <h3><span>Data Engineer</span><small>BMG - The New Music Company</small></h3>
+                                  <p>ELT connection from SAP BW to Bigquery</p>
+                                  <p>Worked as an ML Engineer in Music Similarity, Tagging and Information Retrieval tasks targeting BMG Music Catalogue</p>
+                                  <p>CI-CD pipeline using Bitbucket, Cloud Build, JIRA, Confluence</p>
+                                  <p>Automated cloud operations (resource management, IAM control) using Terraform and GCP</p>
+                             </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2021</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Research Assistant</span><small>DiscoRet</small></h3>
+                                <p>Participated in research studies and published <a rel="nofollow" href="https://arxiv.org/abs/2207.05727">Enhancing Fairness of Visual Attribute Predictors</a> at ACCV 2022 Conference</p>
+                                <p>Research topics: Fairness, Robust Generative Models (VAEs, GANs, INNs), Latent Space manipulation, Hyper- parameter optimization, Neural Architecture Search, AutoML</p>
+                                <p>References available upon request <a rel="nofollow" href="https://scholar.google.com/citations?user=EPSrcXcAAAAJ&hl=de">(Nishant Kumar)</a> <a rel="nofollow" href="http://www1.inf.tu-dresden.de/~ds24/index.html">(Dmitrij Schlesinger)</a></p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2019</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Python Programmer</span><small><a rel="nofollow" href="https://www.hzdr.de/db/Cms?pNid=0">Helmholtz-Zentrum Dresden-Rossendorf</a></small></h3>
+                                <p>Designed a UNIX command line tool that queries popular AI hubs for pre-trained weights of a given architecture</p>
+                                <p>References available upon request <a rel="nofollow" href="https://www.hzdr.de/db/!ContMan.Visi.Card?pNid=3529&pUser=120595">(Dr. rer. nat. Peter Steinbach)</a></p>
+                            </div>
+                        </div>
+                      
+
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-12">
+                  <h2 class="mb-4 mobile-mt-2">Educations</h2>
+
+                    <div class="timeline">
+                        <div class="timeline-wrapper">
+                             <div class="timeline-yr">
+                                  <span>2021</span>
+                             </div>
+                             <div class="timeline-info">
+                                  <h3><span>Visual Computing</span><small>Master of Science</small></h3>
+                                  <small>Technische Universität Dresden</small>
+                                  <p><a rel="nofollow" href="https://github.com/erdemunal35/ood_detection_methods">Master's Thesis:</a> Out-of-distribution Detection for Microscopic Imaging</p>
+                                  <p><a rel="nofollow" href="https://arxiv.org/abs/2207.05727">Publication:</a> Enhancing Fairness of Visual Attribute Predictors</p>
+                                  <p>Topics: Deep Learning, Computer Vision, Computer Graphics, High Performance Computing, Data Visualization</p>
+                             </div>
+                        </div>
+
+                        <div class="timeline-wrapper">
+                            <div class="timeline-yr">
+                                <span>2017</span>
+                            </div>
+                            <div class="timeline-info">
+                                <h3><span>Electrical & Electronics Engineering</span><small>Bachelor of Science</small></h3>
+                                <small>Bilkent University</small>
+                                <p>Project: LocInCampus - 2D outdoor localization system independent of GPS functioning in Bilkent University Campus borders</p>
+                                <p>Topics: Telecommunications, Computational Neuroscience, Digital Signal Processing, Statistical Learning and Data Analytics, Reinforcement Learning, Computer Networks, Embedded Systems</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact py-5" id="contact">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-lg-5 mr-lg-5 col-12">
+            <div class="google-map w-100">
+              <iframe src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJqVQ3bPJOqEcRKTtTWBKibhU&key=AIzaSyBtqzXC7IPKl5wTM_mdnCwux7wdeQkevJE" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+
+            <div class="contact-info d-flex justify-content-between align-items-center py-4 px-lg-5">
+                <div class="contact-info-item">
+                  <h3 class="mb-3 text-white">You can reach me at</h3>
+                  <p class="footer-text mb-0">+4915203254846</p>
+                  <p><a href="mailto:hello@company.co">erdem.unal96@gmail.com</a></p>
+                </div>
+
+                <ul class="social-links">
+                     <li><a href="#" class="uil uil-dribbble" data-toggle="tooltip" data-placement="left" title="Dribbble"></a></li>
+                     <li><a href="#" class="uil uil-instagram" data-toggle="tooltip" data-placement="left" title="Instagram"></a></li>
+                     <li><a href="#" class="uil uil-youtube" data-toggle="tooltip" data-placement="left" title="Youtube"></a></li>
+                </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-12">
+            <div class="contact-form">
+              <h2 class="mb-4">Interested to work together? Let's talk</h2>
+
+              <form action="" method="get">
+                <div class="row">
+                  <div class="col-lg-6 col-12">
+                    <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
+                  </div>
+
+                  <div class="col-lg-6 col-12">
+                    <input type="email" class="form-control" name="email" placeholder="Email" id="email">
+                  </div>
+
+                  <div class="col-12">
+                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
+                  </div>
+
+                  <div class="ml-lg-auto col-lg-5 col-12">
+                    <input type="submit" class="form-control submit-btn" value="Send Button">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+     <!-- <footer class="footer py-5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-lg-12 col-12">                                
+                        <p class="copyright-text text-center">Copyright &copy; 2022 Autocapsule . All rights reserved</p>
+                        <p class="copyright-text text-center">Designed by <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p>
+                    </div>
+                    
+               </div>
+          </div>
+     </footer> -->
+
+    <script src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Headroom.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jQuery.headroom.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/smoothscroll.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+  </body>
+</html>
