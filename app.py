@@ -11,5 +11,7 @@ app = Flask(__name__)
 def hello():
     return render_template('index.html')
 if __name__ == "__main__":
-    # app.run(host="0.0.0.0", port=5000, debug=True)
-    app.run()
+    app.run(host="0.0.0.0", port=7000)
+    # app.run()
+
+# gunicorn --workers 1 --threads 1 --bind 0.0.0.0:7000 --reload app:app 
