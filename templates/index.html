@@ -86,7 +86,7 @@ https://www.tooplate.com/view/2115-marvel
                         <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and web development.</p>
                         
                         <div class="custom-btn-group mt-4">
-                          <a href="#" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
+                          <a href="{{ url_for('download', filename="CV.pdf") }}" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
                           <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Get a free quote</a>
                         </div>
                     </div>
@@ -255,13 +255,14 @@ https://www.tooplate.com/view/2115-marvel
                 <div class="contact-info-item">
                   <h3 class="mb-3 text-white">You can reach me at</h3>
                   <p class="footer-text mb-0">+4915203254846</p>
-                  <p><a href="mailto:hello@company.co">erdem.unal96@gmail.com</a></p>
+                  <p><a href="mailto:erdem.unal96@gmail.com">erdem.unal96@gmail.com</a></p>
                 </div>
 
                 <ul class="social-links">
-                     <li><a href="#" class="uil uil-dribbble" data-toggle="tooltip" data-placement="left" title="Dribbble"></a></li>
-                     <li><a href="#" class="uil uil-instagram" data-toggle="tooltip" data-placement="left" title="Instagram"></a></li>
-                     <li><a href="#" class="uil uil-youtube" data-toggle="tooltip" data-placement="left" title="Youtube"></a></li>
+                     <li><a href="https://linkedin.com/in/erdemunal35/" data-placement="left" title="LinkedIn"><iconify-icon icon="uil:linkedin" width="36" height="36"></iconify-icon></a></li>
+                     <li><a href="https://github.com/erdemunal35" data-placement="left" title="GitHub"><iconify-icon icon="uil:github" width="36" height="36"></iconify-icon></a></li>
+                     <li><a href="https://instagram.com/erdeemunal" data-placement="left" title="Instagram"><iconify-icon icon="uil:instagram-alt" width="36" height="36"></iconify-icon></a></li>
+                     
                 </ul>
             </div>
           </div>
@@ -270,7 +271,7 @@ https://www.tooplate.com/view/2115-marvel
             <div class="contact-form">
               <h2 class="mb-4">Interested to work together? Let's talk</h2>
 
-              <form action="" method="get">
+              <form action="mailto:erdem.unal96@gmail.com" method="post">
                 <div class="row">
                   <div class="col-lg-6 col-12">
                     <input type="text" class="form-control" name="name" placeholder="Your Name" id="name">
@@ -286,6 +287,7 @@ https://www.tooplate.com/view/2115-marvel
 
                   <div class="ml-lg-auto col-lg-5 col-12">
                     <input type="submit" class="form-control submit-btn" value="Send Button">
+                    <!-- <input type="reset" class="form-control submit-btn" value="Reset Button"> -->
                   </div>
                 </div>
               </form>
@@ -319,5 +321,9 @@ https://www.tooplate.com/view/2115-marvel
     <script src="{{ url_for('static', filename='js/smoothscroll.js') }}"></script>
     <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
 
+    <!-- Additional icons -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
   </body>
 </html>
