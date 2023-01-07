@@ -21,6 +21,6 @@ def download(filename):
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT")))
-    # app.run()
 
+# Debug/Development
 # gunicorn --workers 1 --threads 1 --bind 0.0.0.0:7000 --reload app:app  
