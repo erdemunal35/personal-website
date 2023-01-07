@@ -1,9 +1,5 @@
-from flask import Flask, render_template, send_from_directory, request, flash, redirect, url_for
+from flask import Flask, render_template, send_from_directory
 import os
-
-# project_root = os.path.dirname(__file__)
-# template_path = os.path.join(project_root, 'web_code')
-# app = Flask(__name__, template_folder=template_path, static_folder=template_path)
 
 app = Flask(__name__)
 # app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
@@ -20,7 +16,7 @@ def download(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT")))
+    app.run(debug=True, host="0.0.0.0")
 
 # Debug/Development
 # gunicorn --workers 1 --threads 1 --bind 0.0.0.0:7000 --reload app:app  
