@@ -31,3 +31,6 @@ Launch the Gunicorn server
 ```gcloud config set project PROJECT_ID```
 
 ```gcloud run deploy```
+
+## References
+Source of the HTML template: [https://www.tooplate.com/view/2115-marvel](https://www.tooplate.com/view/2115-marvel)
