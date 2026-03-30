@@ -1,0 +1,13 @@
+# Copy this file to terraform.tfvars and fill in the values.
+# NEVER commit terraform.tfvars to version control.
+
+project_id     = "erdem-personal-website-prod"
+project_number = "157799560453"
+region         = "europe-west1"
+service_name   = "personal-website"
+
+# Sensitive — use env vars instead if preferred:
+#   export TF_VAR_maps_api_key="your-key"
+#   export TF_VAR_secret_key="your-secret"
+maps_api_key = "YOUR_MAPS_API_KEY_HERE"
+secret_key   = "YOUR_FLASK_SECRET_KEY_HERE"
