@@ -24,6 +24,10 @@ def set_security_headers(response):
         "frame-src https://www.google.com; "
         "connect-src 'self'"
     )
+    response.headers['Permissions-Policy'] = (
+        "camera=(), microphone=(), geolocation=(), payment=(), usb=(), "
+        "interest-cohort=(), accelerometer=(), gyroscope=(), magnetometer=()"
+    )
     return response
 
 
