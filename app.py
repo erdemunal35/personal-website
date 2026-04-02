@@ -41,7 +41,8 @@ def set_security_headers(response):
 @app.route('/')
 def hello():
     maps_api_key = os.environ.get('MAPS_API_KEY', '')
-    return render_template('index.html', maps_api_key=maps_api_key)
+    formspree_id = os.environ.get('FORMSPREE_ID', '')
+    return render_template('index.html', maps_api_key=maps_api_key, formspree_id=formspree_id)
 
 
 @app.route('/downloads/<filename>', methods=['GET'])

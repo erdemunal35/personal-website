@@ -45,5 +45,4 @@ resource "google_cloudbuild_trigger" "deploy_on_push" {
     }
   }
 
-  service_account = "projects/${var.project_id}/serviceAccounts/${var.project_number}@cloudbuild.gserviceaccount.com"
 }

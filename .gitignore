@@ -11,6 +11,8 @@ terraform/terraform.tfstate.backup
 terraform/terraform.tfstate.*.backup
 terraform/*.tfvars
 !terraform/terraform.tfvars.example
+terraform/tfplan
+terraform/*.tfplan
 
 # Python
 __pycache__/

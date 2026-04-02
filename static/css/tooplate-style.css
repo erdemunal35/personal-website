@@ -411,6 +411,24 @@ b, strong {
   background: #5b5b5b;
 }
 
+.project-caption h4 {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #353535;
+  margin-bottom: 4px;
+}
+.project-caption p {
+  font-size: 15px;
+  color: #5b5b5b;
+  margin-bottom: 0;
+}
+.dark-mode .project-caption h4 {
+  color: #ffffff;
+}
+.dark-mode .project-caption p {
+  color: rgba(255,255,255,0.7);
+}
+
 .google-map iframe {
   width: 100%;
 }
