@@ -10,7 +10,7 @@ resource "google_artifact_registry_repository" "cloud_run_source" {
     id     = "keep-minimum-versions"
     action = "KEEP"
     most_recent_versions {
-      keep_count = 5
+      keep_count = 1
     }
   }
 }
