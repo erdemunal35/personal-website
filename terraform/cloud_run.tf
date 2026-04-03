@@ -29,13 +29,33 @@ resource "google_cloud_run_v2_service" "personal_website" {
       }
 
       env {
-        name  = "MAPS_API_KEY"
-        value = var.maps_api_key
+        name = "MAPS_API_KEY"
+        value_source {
+          secret_key_ref {
+            secret  = google_secret_manager_secret.maps_api_key.secret_id
+            version = "latest"
+          }
+        }
       }
 
       env {
-        name  = "SECRET_KEY"
-        value = var.secret_key
+        name = "SECRET_KEY"
+        value_source {
+          secret_key_ref {
+            secret  = google_secret_manager_secret.secret_key.secret_id
+            version = "latest"
+          }
+        }
+      }
+
+      env {
+        name = "GMAIL_APP_PASSWORD"
+        value_source {
+          secret_key_ref {
+            secret  = google_secret_manager_secret.gmail_app_password.secret_id
+            version = "latest"
+          }
+        }
       }
     }
   }
@@ -44,6 +64,8 @@ resource "google_cloud_run_v2_service" "personal_website" {
     type    = "TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST"
     percent = 100
   }
+
+  depends_on = [google_project_iam_member.compute_sa_secret_accessor]
 
   lifecycle {
     # Ignore image changes — Cloud Build handles deployments independently

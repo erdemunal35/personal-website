@@ -22,18 +22,6 @@ variable "service_name" {
   default     = "personal-website"
 }
 
-variable "maps_api_key" {
-  description = "Google Maps Embed API key (set via TF_VAR_maps_api_key or terraform.tfvars)"
-  type        = string
-  sensitive   = true
-}
-
-variable "secret_key" {
-  description = "Flask SECRET_KEY for session management (set via TF_VAR_secret_key or terraform.tfvars)"
-  type        = string
-  sensitive   = true
-}
-
 variable "github_owner" {
   description = "GitHub repository owner"
   type        = string
