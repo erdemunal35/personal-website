@@ -1,7 +1,7 @@
 import os
 import secrets
 import logging
-from flask import Flask, render_template, send_from_directory, abort
+from flask import Flask, render_template, send_from_directory, abort, request, jsonify
 
 logging.basicConfig(
     level=logging.INFO,
@@ -43,6 +43,15 @@ def hello():
     maps_api_key = os.environ.get('MAPS_API_KEY', '')
     formspree_id = os.environ.get('FORMSPREE_ID', '')
     return render_template('index.html', maps_api_key=maps_api_key, formspree_id=formspree_id)
+
+
+@app.route('/contact', methods=['POST'])
+def contact():
+    name = request.form.get('name', '').strip()
+    email = request.form.get('email', '').strip()
+    message = request.form.get('message', '').strip()
+    logging.info("Contact form submission — name=%s email=%s message_len=%d", name, email, len(message))
+    return jsonify({"ok": True})
 
 
 @app.route('/downloads/<filename>', methods=['GET'])
