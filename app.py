@@ -1,6 +1,8 @@
 import os
 import secrets
 import logging
+import smtplib
+from email.mime.text import MIMEText
 from flask import Flask, render_template, send_from_directory, abort, request, jsonify
 
 logging.basicConfig(
@@ -50,7 +52,22 @@ def contact():
     name = request.form.get('name', '').strip()
     email = request.form.get('email', '').strip()
     message = request.form.get('message', '').strip()
-    logging.info("Contact form submission — name=%s email=%s message_len=%d", name, email, len(message))
+    logging.info("Contact form submission — name=%s email=%s", name, email)
+
+    gmail_password = os.environ.get('GMAIL_APP_PASSWORD')
+    if gmail_password:
+        try:
+            body = f"Name: {name}\nEmail: {email}\n\n{message}"
+            msg = MIMEText(body)
+            msg['Subject'] = f"Portfolio contact from {name}"
+            msg['From'] = 'erdem.unal96@gmail.com'
+            msg['To'] = 'erdem.unal96@gmail.com'
+            with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
+                server.login('erdem.unal96@gmail.com', gmail_password)
+                server.send_message(msg)
+        except Exception as e:
+            logging.error("Failed to send contact email: %s", e)
+
     return jsonify({"ok": True})
 
 
