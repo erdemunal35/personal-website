@@ -26,10 +26,6 @@ build/
 .venv/
 venv/
 
-# Docker
-Dockerfile
-.dockerignore
-
 # macOS
 .DS_Store
 

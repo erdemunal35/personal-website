@@ -13,12 +13,11 @@ resource "google_cloudbuild_trigger" "deploy_on_push" {
 
   build {
     step {
-      name = "gcr.io/k8s-skaffold/pack"
+      name = "gcr.io/cloud-builders/docker"
       args = [
         "build",
-        "${var.region}-docker.pkg.dev/${var.project_id}/cloud-run-source-deploy/${var.service_name}/${var.service_name}",
-        "--builder=gcr.io/buildpacks/builder:v1",
-        "--path=.",
+        "-t", "${var.region}-docker.pkg.dev/${var.project_id}/cloud-run-source-deploy/${var.service_name}:latest",
+        ".",
       ]
     }
 
@@ -26,7 +25,7 @@ resource "google_cloudbuild_trigger" "deploy_on_push" {
       name = "gcr.io/cloud-builders/docker"
       args = [
         "push",
-        "${var.region}-docker.pkg.dev/${var.project_id}/cloud-run-source-deploy/${var.service_name}/${var.service_name}",
+        "${var.region}-docker.pkg.dev/${var.project_id}/cloud-run-source-deploy/${var.service_name}:latest",
       ]
     }
 
@@ -34,7 +33,7 @@ resource "google_cloudbuild_trigger" "deploy_on_push" {
       name = "gcr.io/cloud-builders/gcloud"
       args = [
         "run", "deploy", var.service_name,
-        "--image=${var.region}-docker.pkg.dev/${var.project_id}/cloud-run-source-deploy/${var.service_name}/${var.service_name}",
+        "--image=${var.region}-docker.pkg.dev/${var.project_id}/cloud-run-source-deploy/${var.service_name}:latest",
         "--region=${var.region}",
         "--platform=managed",
       ]

@@ -16,9 +16,8 @@ resource "google_cloud_run_v2_service" "personal_website" {
     max_instance_request_concurrency = 80
 
     containers {
-      # Image is managed by Cloud Build — Terraform tracks the latest deployed image.
-      # To update: push to GitHub (Cloud Build trigger) or run `gcloud run deploy --source .`
-      image = "${var.region}-docker.pkg.dev/${var.project_id}/cloud-run-source-deploy/${var.service_name}/${var.service_name}:latest"
+      # Image is managed by Cloud Build — push to main triggers a build and deploy.
+      image = "${var.region}-docker.pkg.dev/${var.project_id}/cloud-run-source-deploy/${var.service_name}:latest"
 
       resources {
         limits = {
