@@ -7,7 +7,18 @@ https://www.tooplate.com/view/2115-marvel
 */
 
 
-@import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,700");
+@font-face {
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../font/mavenpro/maven-pro-400.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../font/mavenpro/maven-pro-700.ttf') format('truetype');
+}
 body {
   font-family: "Maven Pro", sans-serif;
   padding-top: 70px;

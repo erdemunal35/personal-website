@@ -4,6 +4,8 @@ import logging
 import smtplib
 from email.mime.text import MIMEText
 from flask import Flask, render_template, send_from_directory, abort, request, jsonify
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 logging.basicConfig(
     level=logging.INFO,
@@ -15,6 +17,11 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY') or secrets.token_hex(32)
 
 app.config['UPLOAD_FOLDER'] = "files"
+app.config['SESSION_COOKIE_SECURE'] = True
+app.config['SESSION_COOKIE_HTTPONLY'] = True
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+
+limiter = Limiter(app, key_func=get_remote_address, default_limits=[])
 
 
 @app.after_request
@@ -27,8 +34,8 @@ def set_security_headers(response):
     response.headers['Content-Security-Policy'] = (
         "default-src 'self'; "
         "script-src 'self' https://code.iconify.design; "
-        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
-        "font-src 'self' https://fonts.gstatic.com data:; "
+        "style-src 'self' 'unsafe-inline'; "
+        "font-src 'self' data:; "
         "img-src 'self' data: https:; "
         "frame-src https://www.google.com; "
         "connect-src 'self'"
@@ -43,8 +50,7 @@ def set_security_headers(response):
 @app.route('/')
 def hello():
     maps_api_key = os.environ.get('MAPS_API_KEY', '')
-    formspree_id = os.environ.get('FORMSPREE_ID', '')
-    return render_template('index.html', maps_api_key=maps_api_key, formspree_id=formspree_id)
+    return render_template('index.html', maps_api_key=maps_api_key)
 
 
 @app.route('/contact', methods=['POST'])
@@ -72,6 +78,7 @@ def contact():
 
 
 @app.route('/downloads/<filename>', methods=['GET'])
+@limiter.limit("20 per minute")
 def download(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
