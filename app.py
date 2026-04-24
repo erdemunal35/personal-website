@@ -21,7 +21,7 @@ app.config['SESSION_COOKIE_SECURE'] = True
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
-limiter = Limiter(app, key_func=get_remote_address, default_limits=[])
+limiter = Limiter(key_func=get_remote_address, app=app, default_limits=[])
 
 
 @app.after_request
