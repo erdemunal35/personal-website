@@ -55,6 +55,10 @@ def hello():
 
 @app.route('/contact', methods=['POST'])
 def contact():
+    if request.form.get('website', '').strip():
+        logging.info("Contact form honeypot triggered — dropping submission")
+        return jsonify({"ok": True})
+
     name = request.form.get('name', '').strip()
     email = request.form.get('email', '').strip()
     message = request.form.get('message', '').strip()
